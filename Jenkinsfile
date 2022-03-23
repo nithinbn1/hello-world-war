@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'lunix' }
     stages {
         stage('checkout') { 
             steps {
