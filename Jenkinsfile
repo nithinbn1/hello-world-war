@@ -10,11 +10,6 @@ stage('build') {
             steps {
               sh "mvn clean package"
             }
-        }  
-        stage('deploy') { 
-            steps {
-              sh " "
-            }
-        }        
+        }         
     }
 }
