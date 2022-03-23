@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'java' }
+    agent { label 'nithin_slave' }
     stages {
         stage('checkout') { 
             steps {
