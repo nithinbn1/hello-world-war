@@ -8,7 +8,7 @@ pipeline {
         }
 stage('build') { 
             steps {
-              sh "Dockerfile"
+              sh "mvn clean package"
             }
         }         
      }
