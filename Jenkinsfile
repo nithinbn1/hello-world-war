@@ -1,5 +1,5 @@
 pipeline{
-      agent any
+      agent { label 'linux' }
       stages{
       stage('check out'){
                   steps{
@@ -12,25 +12,24 @@ pipeline{
       sh "pwd"
       sh "ls"
       sh "cd hello-world-war"
-      sh "docker build -t sandy1791994/docwarimage:1.0 ."
+      sh "docker build -t nithin412/docwarimage:1.0 ."
       }
       }
        stage('publish'){
                   steps{
                         sh "docker login -u sandy1791994 -p mAnj@0606g"
-                        sh "docker push sandy1791994/docwarimage:1.0"
+                        sh "docker push nithin412/docwarimage:1.0"
                   }
             }
             stage('deploy'){
-                  agent { label 'slave2' }
+                  agent { label 'nithin' }
                   steps{
                         sh "docker login -u sandy1791994 -p mAnj@0606g"
                         sh "docker pull sandy1791994/docwarimage:1.0"
                         sh "docker rm -f trail1"
-                        sh "docker run -d -p 8085:8080 --name trail1 sandy1791994/docwarimage:1.0"
+                        sh "docker run -d -p 8085:8080 --name trail1 nithin412/docwarimage:1.0"
                   }
             }
       }
       }
-
 
