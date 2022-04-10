@@ -8,7 +8,7 @@ pipeline {
         }
 stage('build dockerfile') { 
             steps {
-              sh "docker build -t nithinbn1/hello-world-war ."
+              sh "docker build -t tomcatprj ."
             }
         }         
      }
