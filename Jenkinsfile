@@ -6,9 +6,9 @@ pipeline {
               sh "git clone https://github.com/nithinbn1/hello-world-war.git"
             }
         }
-stage('build') { 
+stage('build dockerfile') { 
             steps {
-              sh "mvn clean package"
+              sh "docker build -t nithinbn1/hello-world-war ."
             }
         }         
      }
