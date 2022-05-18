@@ -26,7 +26,7 @@ pipeline{
                   steps{
                         sh "docker login -u nithin412 -p nithinBn@07"
                         sh "docker pull nithin412/dockimage:1.0"
-                        sh "docker rm -f trail1"
+                        //sh "docker rm -f trail1"
                         sh "docker run -d -p 8050:8080 --name trail1 nithin412/dockimage:1.1"
                   }
             }
