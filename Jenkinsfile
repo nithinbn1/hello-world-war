@@ -1,5 +1,5 @@
 pipeline{
-      agent { label 'linux' }
+      agent any
       stages{
       stage('check out'){
                   steps{
@@ -22,7 +22,7 @@ pipeline{
                   }
             }
             stage('deploy'){
-                  agent { label 'nithin' }
+                  agent any
                   steps{
                         sh "docker login -u nithin412 -p nithinBn@07"
                         sh "docker pull nithin412/dockimage:1.0"
